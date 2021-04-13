@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HelloWebsockets</title>
+</head>
+<body>
+    <div id="app">
+        <h1>Hello Websocket</h1>
+    message: <input type="text" v-model="newMessage">
+    <br>
+    name: <input type="text" v-model="senderName">
+
+    <button v-on:click="sendMessage">Send</button>
+    <h2>Chat history </h2>
+    <ul>
+        <li v-for="message in receivedMessages">
+            Message: {{message.senderName}} <br>
+            From: {{message.message}}
+        </li>
+    </ul>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="app.js"></script>
+    
+</body>
+</html>
+
+<!-- PROTOCOLS -->
+<!-- MONOPOLY EXAMPLE
+TO SERVER FROM CLIENT
+{
+    "action": "new-player-joined",
+    "player_name" : "DJ",
+    "color": "blue"
+}
+
+TO CLIENT FROM SERVER
+{
+    "action": "roll_dice",
+    "roll_dice" : "4",
+    "roll_dice" : "1"
+}
+
+TO CLIENT FROM SERVER
+{
+    "event" : "player-moved",
+    "player" : "DJ",
+    "new_position" : 17
+}
+
+TO CLIENT FROM SERVER
+{
+    "event" : "turn-changed",
+    "turn" : "Bob"
+}
+
+MAZE EXAMPLE
+TO SERVER FROM CLIENT
+{
+    "action" : "block-modified",
+    "x" : 17,
+    "y" : 1,
+    "new-type": "grassy"
+} -->
+
+
+
